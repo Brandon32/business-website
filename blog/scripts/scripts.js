@@ -511,6 +511,7 @@ async function loadLibs() {
     window.milo.libs = { base: `${domain}/libs` };
     try {
       const { default: list } = await import(`${window.milo.libs.base}/blocks/list.js`);
+      list.push('figure', 'quote', 'aside');
       window.milo.libs.blocks = { list };
     } catch (e) {
       // eslint-disable-next-line no-console
